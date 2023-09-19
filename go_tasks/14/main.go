@@ -48,7 +48,7 @@ func CheckType(variable interface{}) string {
 }
 
 // ----------------------------------------------------------------
-// Функция определения типа входящей переменой с помощью пакета reflect
+// Функция определения типа входящей переменой с помощью пакета reflect (но он работает медленно)
 func CheckType2(variable interface{}) string {
 	return reflect.TypeOf(variable).String()
 }
