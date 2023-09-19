@@ -4,15 +4,19 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func main() {
 	animalsString := []string{"cat", "cat", "dog", "cat", "tree"}
 	fmt.Println(createPlenty(animalsString))
 	fmt.Println(createPlentyAsString(animalsString))
+	fmt.Println(sortCompact(animalsString))
 }
 
-//----------------------------------------------------------------
+// ----------------------------------------------------------------
 // Функция возвращает собственное множество в виде мапы элемент множества - ключ мапы.
 // Клчючи в мапе не повторяются, что обеспечивает индивидуальность элементов.
 func createPlenty(slice []string) map[string]struct{} {
@@ -26,7 +30,7 @@ func createPlenty(slice []string) map[string]struct{} {
 	return plenty
 }
 
-//----------------------------------------------------------------
+// ----------------------------------------------------------------
 // Функция возвращает собственное множество в виде слайса.
 // Принцип действия как и у функции createPlenty() за исключением
 // вывода финального результата в виде строки.
@@ -44,4 +48,13 @@ func createPlentyAsString(slice []string) []string {
 		stringPlenty = append(stringPlenty, key)
 	}
 	return stringPlenty
+}
+
+// ----------------------------------------------------------------
+// Функция возвращает собственное множество в виде слайса.
+// через библиотеку slices
+func sortCompact(slice []string) []string {
+	slices.Sort(slice)            // сортировка слайса
+	slice = slices.Compact(slice) // объединение одинаковых элемементов в слайсе
+	return slice
 }
