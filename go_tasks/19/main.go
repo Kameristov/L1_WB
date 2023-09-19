@@ -3,14 +3,20 @@
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"slices"
+)
 
 func main() {
-	inputString := "главрыба"
+	inputString := "главрыба1dsf34"
 	fmt.Println(inputString)
 	fmt.Println(solve1(inputString))
+	fmt.Println(solve2(inputString))
 }
 
+// Реверсия через for
 func solve1(str string) string {
 	slice := []rune(str)
 	// Переворачиваем слайс
@@ -20,4 +26,10 @@ func solve1(str string) string {
 	return string(slice)
 }
 
-// TODO другие варианты
+// Реверсия через функцию пакета slices
+func solve2 (str string) string{
+	slice := []rune(str)
+	slices.Reverse(slice)
+	return string(slice)
+}
+
