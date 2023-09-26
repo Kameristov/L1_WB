@@ -25,10 +25,7 @@ numbersSlice := []int{1, 2, 3, 4, 5}
 slice := make([]int, 5)
 ```
 
-4. Создание slice через new
 
-```go
-mapa := new(map[string]int)
 ```
 
 ##### map
@@ -58,8 +55,4 @@ mapa := map[string]int{
 mapa := make(map[string]int)
 ```
 
-4. Создание map через new
 
-```go
-mapa := new(map[string]int)
-```
